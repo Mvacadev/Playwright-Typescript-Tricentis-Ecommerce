@@ -1,0 +1,25 @@
+{
+  "name": "playwright-ts-challenge",
+  "version": "1.0.0",
+  "description": "Framework de pruebas automatizadas con Playwright + TypeScript para Tricentis Demo Web Shop",
+  "private": true,
+  "scripts": {
+    "test": "playwright test --project=chromium --project=api",
+    "test:smoke": "playwright test --project=chromium --grep @smoke",
+    "test:regression": "playwright test --project=chromium --project=firefox --grep \"@smoke|@regression\"",
+    "test:api": "playwright test --project=api",
+    "test:forced": "playwright test --grep @forced-failure",
+    "test:firefox": "playwright test --project=firefox",
+    "report": "playwright show-report",
+    "typecheck": "tsc --noEmit"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.0",
+    "@types/node": "^26.6.5",
+    "dotenv": "^18.0.7",
+    "typescript": "^7.0.2"
+  }
+}
